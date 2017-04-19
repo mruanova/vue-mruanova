@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mauricio Ruanova-Hurtado</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="mruanova.css">
+</head>
+<body>
+    <div class="header">
+        <nav style="margin-left:5px;">
+            <span>
+                <a target="_blank" class="link1" data-toggle="tooltip" title="https://www.linkedin.com/in/mruanova" href="https://www.linkedin.com/in/mruanova">
+                    linkedin
+                </a>
+            </span>
+            <span>
+                <a target="_blank" class="link2" data-toggle="tooltip" title="https://github.com/mruanova" href="https://github.com/mruanova">
+                    github
+                </a>
+            </span>
+            <span>
+                <a target="_blank" class="link3" data-toggle="tooltip" title="mruanova@outlook.com" href="mailto:mruanova@outlook.com">
+                    email
+                </a>
+            </span>
+            <span>
+                <a target="_blank" class="link4" data-toggle="tooltip" title="About" id="about" href="">
+                    about
+                </a>
+            </span>
+            <span>
+                <a target="_self" class="link5" data-toggle="tooltip" title="Snippets" id="Snippets" href="snippets.html">
+                    snippets
+                </a>
+            </span>
+        </nav>
+    </div>
+    <div class="main">
+        <div class="box photo">
+            <div class="animation">
+                <img src="tap.png" alt="scroll up" />
+            </div>
+            <div class="mau">mau</div>
+            <div class="mauricioruanovahurtado">MAURICIO RUANOVA-HURTADO</div>
+            <div class="skill aspnet">ASP.Net C#</div>
+            <div class="skill mongodb">MongoDB</div>
+            <div class="skill expressjs">ExpressJS</div>
+            <div class="skill angularjs">AngularJS</div>
+            <div class="skill nodejs">NodeJS</div>
+            <div class="skill rubyonrails">Ruby on rails</div>
+            <div class="skill python">Python</div>
+            <div class="skill aws">AWS</div>
+            <div class="fullstack">Full Stack</div>
+            <div class="softwareengineer">Software Engineer</div>
+        </div>
+        <div class="box">
+            <div class="about">
+                <section>Mauricio Ruanova-Hurtado, full stack software engineer.</section>
+                <section>I develop front end, web services, back end and cloud.</section>
+                <section>This website is my career portfolio hosted in AWS.</section>
+            </div>
+            <div class="project" onclick="codeAddress('213 W Institute Pl #610, Chicago, IL 60610')">
+                <div class="company">Coding DOJO</div>
+                <div class="website">www.codingdojo.com</div>
+                <div class="position">Web Developer Python/Ruby/Rails/NodeJs/AngularJs</div>
+                <div class="address">213 W Institute Pl #610, Chicago, IL 60610</div>
+            </div>
+            <div class="project" onclick="codeAddress('33 W Monroe St #900, Chicago, IL 60603')">
+                <div class="company">CSG International</div>
+                <div class="website">www.csgi.com</div>
+                <div class="position">Software Engineer Microsoft C# ASP.Net MVC Web API</div>
+                <div class="address">33 W Monroe St #900, Chicago, IL 60603</div>
+            </div>
+            <div class="project" onclick="codeAddress('200 E Randolph St #7, Chicago, IL 60601')">
+                <div class="company">AON Consulting Inc</div>
+                <div class="website">www.aon.com</div>
+                <div class="position">IT Applications Architect Microsoft C# ASP.Net MVC</div>
+                <div class="address">200 E Randolph St #7, Chicago, IL 60601</div>
+            </div>
+            <div class="project" onclick="codeAddress('161 N Clark St #3700, Chicago, IL 60601')">
+                <div class="company">AVANADE Inc</div>
+                <div class="website">www.avanade.com</div>
+                <div class="position">Senior Software Engineer Microsoft HTML5/CSS3/JS</div>
+                <div class="address">161 N Clark St #3700, Chicago, IL 60601</div>
+            </div>
+            <div class="project" onclick="codeAddress('225 N Michigan Ave #1600, Chicago, IL 60601')">
+                <div class="company">G/O Digital Marketing</div>
+                <div class="website">www.godigitalmarketing.com</div>
+                <div class="position">Software Engineer HTML5/CSS3/JS C# ASP.Net MVC</div>
+                <div class="address">225 N Michigan Ave #1600, Chicago, IL 60601</div>
+            </div>
+        </div>
+        <div class="box">
+            <div id="map"></div>
+        </div>
+    </div>
+    <div class="footer">
+        <div ng-controller="WelcomeController">
+            © {{date | date:'yyyy'}} Mauricio Ruanova-Hurtado  
+			<a target="_blank" class="" data-toggle="tooltip" title="Scholarship paper"
+			   href="https://link.springer.com/chapter/10.1007/11499053_28">
+				papers
+			</a> 
+			<a target="_blank" class="" data-toggle="tooltip" title="Google books"
+			   href="https://books.google.com/books/about/Estandarizaci%C3%B3n_y_mejora_de_procesos_y.html?id=ipI3HQAACAAJ">
+				books
+			</a>             
+        </div>
+    </div>
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="link2">Mauricio Ruanova-Hurtado</div>
+            <div class="link1">mruanova.com</div>
+            <section>This website is my career portfolio</section>
+            <section>and it implements the following technologies:</section>
+            <ul>
+                <li>HTML5 / CSS3 / JavaScript</li>
+                <li>Bootstrap</li>
+                <li>AngularJS / NodeJS</li>
+                <li>Cloud computing</li>
+                <li>AWS (Amazon Web Services)</li>
+                <li>Route 53 / S3 bucket</li>
+                <li>API Gateway Microservices</li>
+                <li>Lambda Functions</li>
+                <li>DynamoDB</li>
+                <li>
+                    <a href="https://246gg84zg8.execute-api.us-west-2.amazonaws.com/prod/projects" target="_blank" class="link3" data-toggle="tooltip" title="Web API">
+                        Web API
+                    </a>
+                </li>
+            </ul>
+            <span>
+                <a href="http://www.linkedin.com/in/mruanova" target="_blank" class="link1" data-toggle="tooltip" title="http://www.linkedin.com/in/mruanova">
+                    linkedin
+                </a>
+            </span>
+            <span>
+                <a href="https://github.com/mruanova" target="_blank" class="link2" data-toggle="tooltip" title="https://github.com/mruanova">
+                    github
+                </a>
+            </span>
+            <span>
+                <a href="mailto:mruanova@outlook.com" target="_blank" class="link3" data-toggle="tooltip" title="mruanova@outlook.com">
+                    email
+                </a>
+            </span>
+        </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!--
+    <script src="iScroll.js"></script>
+    -->
+    <script src="mruanova.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATA9xz6PHfFxFlVLPd4ouYwB3BEQRBgPU&callback=initialize"></script>
+</body>
+</html>

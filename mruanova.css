@@ -1,0 +1,261 @@
+.photo {
+    background-image: url('mau.jpg');
+    background-repeat: no-repeat;
+}
+.header {
+    width: 100%;
+    height: 25px;
+}
+.h1 {
+    color: darkmagenta;
+}
+.h2 {
+    color: darkgoldenrod;
+}
+.h3 {
+    color: darkcyan;
+}
+body {
+    font-family: 'Franklin Gothic';
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.main {
+    width: 100%;
+}
+.footer {
+    color:dimgray;
+}
+.box {
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+    width: 400px;
+    height: 533px;
+	padding: 0 0 0 0;
+}
+.link1 {
+    color: darkcyan;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+.link2 {
+    color: darkgoldenrod;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+.link3 {
+    color: darkmagenta;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+.link4 {
+    color: dimgray;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+.link5 {
+    color: silver;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+.mau {
+    position: absolute;
+    top: -10px;
+    left: 0px;
+    color: white;
+    font-weight: bold;
+    font-size: 95px;
+    text-shadow: 1px 1px #000000;
+    font-family: fantasy;
+    padding: 0 5px 0 5px;
+}
+.mauricioruanovahurtado {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    color: white;
+    font-size: 12px;
+    font-family: 'Franklin Gothic';
+    text-shadow: 1px 1px #000000;
+}
+.skill {
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'Franklin Gothic';
+    width: 170px;
+    left: 210px;
+    text-shadow: 1px 1px #000000;
+}
+.aspnet {
+    position: absolute;
+    color: white;
+    opacity: 0.7;
+    padding: 0 5px 0 5px;
+    background-color: black;
+    top: 10px;
+}
+.rubyonrails {
+    position: absolute;
+    color: white;
+    opacity: 0.8;
+    padding: 0 5px 0 5px;
+    background-color: darkmagenta;
+    top: 35px;
+}
+.python {
+    position: absolute;
+    color: white;
+    opacity: 0.8;
+    padding: 0 5px 0 5px;
+    background-color: darkmagenta;
+    top: 60px;
+}
+.mongodb {
+    position: absolute;
+    color: white;
+    opacity: 0.8;
+    padding: 0 5px 0 5px;
+    background-color: darkgoldenrod;
+    top: 85px;
+}
+.expressjs {
+    position: absolute;
+    color: white;
+    opacity: 0.8;
+    padding: 0 5px 0 5px;
+    background-color: darkgoldenrod;
+    top: 110px;
+}
+.angularjs {
+    position: absolute;
+    color: white;
+    opacity: 0.8;
+    padding: 0 5px 0 5px;
+    background-color: darkgoldenrod;
+    top: 135px;
+}
+.nodejs {
+    position: absolute;
+    color: white;
+    opacity: 0.8;
+    padding: 0 5px 0 5px;
+    background-color: darkgoldenrod;
+    top: 160px;
+}
+.aws {
+    position: absolute;
+    color: white;
+    opacity: 0.8;
+    padding: 0 5px 0 5px;
+    background-color: darkcyan;
+    top: 185px;
+}
+.fullstack {
+    position: absolute;
+    top: 430px;
+    left: 0px;
+    color: white;
+    background-color: darkcyan;
+    opacity: 0.9;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: 'Franklin Gothic';
+    padding: 5px 5px 5px 5px;
+}
+.softwareengineer {
+    position: absolute;
+    top: 475px;
+    left: 0px;
+    color: white;
+    background-color: black;
+    opacity: 0.6;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: 'Franklin Gothic';
+    padding: 5px 5px 5px 5px;
+}
+img {
+    width: 50px;
+}
+#map {
+    height: 100%;
+    width: 365px;
+    left:5px;
+}
+.footer {
+    padding: 0 5px 0 5px;
+}
+.about {
+    font-size: 12px;
+    height: 55px;
+    padding: 0 5px 0 5px;
+}
+.company {
+    color: darkgoldenrod;
+    font-weight:bold;
+}
+.position {
+    color: black;
+}
+.address {
+    color: dimgray;
+}
+.website {
+    color: darkcyan;
+}
+.project {
+    background-color: white;
+    border-color: silver;
+    border: 1px;
+    border-style: solid;
+    height: 90px;
+    margin: 5px 30px 5px 5px;
+    padding: 5px 0 0 5px;
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.animation {
+    position: absolute;
+    top: 0px;
+    left: 200px;
+    -webkit-transition: top 15s;
+    transition: top 15s;
+    z-index: 1;
+}
