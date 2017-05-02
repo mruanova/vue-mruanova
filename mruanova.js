@@ -1,29 +1,51 @@
-var geocoder;
-var map;
-var app = angular.module('demo', []).controller('WelcomeController', function ($scope, $http) {
-    $scope.date = new Date();
-    //GET ALL PROJECTS
-    $http({
-        method: 'GET',
-        url: 'https://246gg84zg8.execute-api.us-west-2.amazonaws.com/prod/projects'
-    }).then(function successCallback(response) {
+
+//READY
+$(document).ready(function () {
+    //GET
+    $.get("https://246gg84zg8.execute-api.us-west-2.amazonaws.com/prod/projects", function (response) {
         //SORT
-        response.data.Items.sort(function (a, b) {
+        response.Items.sort(function (a, b) {
             return parseFloat(a.ProjectId) - parseFloat(b.ProjectId);
         });
         //DISPLAY PROJECTS
-        for (var i = 0; i < response.data.Items.length; i++) {
-            console.log(response.data.Items[i].ProjectId);
-            console.log(response.data.Items[i].Name);
-            console.log(response.data.Items[i].Website);
-            console.log(response.data.Items[i].Position);
-            console.log(response.data.Items[i].Address);
+        for (var i = 0; i < response.Items.length; i++) {
+            var project = "<div class='project'>"
+                + "<div class='company'>"+response.Items[i].Name+"</div>"
+                + "<div class='website'>"+response.Items[i].Website+"</div>"
+                + "<div class='position'>"+response.Items[i].Position+"</div>"
+                + "<div class='address'>"+response.Items[i].Address+"</div>"
+                + "</div>";
+            $("#projects").append(project);
+        };
+    }, "json");
+    $(".animation").css("top", "425px");
+});
+//map.setCenter
+$(document).on("click", ".project", function () {
+    var address = $(this)[0].children[3].innerText;
+    geocoder.geocode({ 'address': address }, function (results, status) {
+        if (status == 'OK') {
+            map.setCenter(results[0].geometry.location);
         }
-    }, function errorCallback(response) {
-        console.log('ERROR: GET PROJECTS FAILED');
     });
 });
-angular.bootstrap(document, ['demo']);
+// Get the modal
+var modal = document.getElementById('myModal');
+var btn = document.getElementById("about");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function () {
+    modal.style.display = "block";
+};
+span.onclick = function () {
+    modal.style.display = "none";
+};
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
+var geocoder;
+var map;
 function initialize() {
     //GOOGLE MAPS
     geocoder = new google.maps.Geocoder();
@@ -31,7 +53,7 @@ function initialize() {
     var mapOptions = {
         zoom: 14,
         center: latlng
-    }
+    };
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
     //1
     var title1 = "Coding DOJO";
@@ -39,7 +61,7 @@ function initialize() {
     var website1 = "www.codingdojo.com";
     geocoder.geocode({ 'address': address1 }, function (results, status) {
         if (status == 'OK') {
-            map.setCenter(results[0].geometry.location);
+            //map.setCenter(results[0].geometry.location);
             var marker = new google.maps.Marker({
                 map: map,
                 position: results[0].geometry.location,
@@ -66,7 +88,7 @@ function initialize() {
     var website2 = "www.csgi.com";
     geocoder.geocode({ 'address': address2 }, function (results, status) {
         if (status == 'OK') {
-            map.setCenter(results[0].geometry.location);
+            //map.setCenter(results[0].geometry.location);
             var marker = new google.maps.Marker({
                 map: map,
                 position: results[0].geometry.location,
@@ -93,7 +115,7 @@ function initialize() {
     var website3 = "www.aon.com";
     geocoder.geocode({ 'address': address3 }, function (results, status) {
         if (status == 'OK') {
-            map.setCenter(results[0].geometry.location);
+            //map.setCenter(results[0].geometry.location);
             var marker = new google.maps.Marker({
                 map: map,
                 position: results[0].geometry.location,
@@ -120,7 +142,7 @@ function initialize() {
     var website4 = "www.avanade.com";
     geocoder.geocode({ 'address': address4 }, function (results, status) {
         if (status == 'OK') {
-            map.setCenter(results[0].geometry.location);
+            //map.setCenter(results[0].geometry.location);
             var marker = new google.maps.Marker({
                 map: map,
                 position: results[0].geometry.location,
@@ -147,7 +169,7 @@ function initialize() {
     var website5 = "www.godigitalmarketing.com";
     geocoder.geocode({ 'address': address5 }, function (results, status) {
         if (status == 'OK') {
-            map.setCenter(results[0].geometry.location);
+            //map.setCenter(results[0].geometry.location);
             var marker = new google.maps.Marker({
                 map: map,
                 position: results[0].geometry.location,
@@ -168,30 +190,4 @@ function initialize() {
             });
         }
     });
-}
-function codeAddress(address) {
-    geocoder.geocode({ 'address': address }, function (results, status) {
-        if (status == 'OK') {
-            map.setCenter(results[0].geometry.location);
-        }
-    });
 };
-// Get the modal
-var modal = document.getElementById('myModal');
-var btn = document.getElementById("about");
-var span = document.getElementsByClassName("close")[0];
-btn.onclick = function () {
-    modal.style.display = "block";
-}
-span.onclick = function () {
-    modal.style.display = "none";
-}
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-//READY
-$(document).ready(function () {
-    $(".animation").css("top", "425px");
-});
