@@ -1,3 +1,26 @@
+/* Small sized screens */
+@media (max-width: 480px) {
+    .animation {
+        position: absolute;
+        top: 0px;
+        left: 200px;
+        -webkit-transition: top 15s;
+        transition: top 15s;
+        z-index: 1;
+    }
+}
+/* Medium sized screens */
+@media only screen and (min-width: 481px) {
+    .animation {
+        display: none;
+    }
+}
+/* Large sized screens */
+@media only screen and (min-width: 1024px) {
+    .animation {
+        display: none;
+    }
+}
 .photo {
     background-image: url('mau.jpg');
     background-repeat: no-repeat;
@@ -251,12 +274,4 @@ img {
     color: black;
     text-decoration: none;
     cursor: pointer;
-}
-.animation {
-    position: absolute;
-    top: 0px;
-    left: 200px;
-    -webkit-transition: top 15s;
-    transition: top 15s;
-    z-index: 1;
 }
