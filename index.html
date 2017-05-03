@@ -6,8 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="mruanova.css">
+    <script type="text/javascript" src="iscroll.js"></script>
+    <script type="text/javascript" src="demoUtils.js"></script>
+    <script type="text/javascript">
+        var myScroll;
+        function loaded () {
+            myScroll = new IScroll('#wrapper', {
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: false
+            });
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, isPassive() ? {
+            capture: false,
+            passive: false
+        } : false);
+</script>
+
 </head>
-<body>
+<body onload="loaded()">
     <div class="header">
         <nav style="margin-left:5px;">
             <a target="_blank" class="link1" title="https://www.linkedin.com/in/mruanova" href="https://www.linkedin.com/in/mruanova">
@@ -18,7 +37,7 @@
             </a>
             <a target="_blank" class="link3" title="mruanova@outlook.com" href="mailto:mruanova@outlook.com">
                 email
-            </a>
+            </a>  
             <a target="" class="link4" id="about" href="#">
                 about
             </a>
@@ -50,8 +69,12 @@
                 <p>Mauricio Ruanova-Hurtado, full stack software engineer.
                 I develop front end, web services, back end and cloud.
                 This website is my career portfolio hosted in AWS.</p>
+            </div> 
+            <div id="wrapper">
+                <div id="scroller">
+                    <div id="projects"></div>
+                </div>
             </div>
-            <div id="projects"></div>
         </div>
         <div class="box col-sm-12 col-md-12 col-lg-4">
             <div id="map"></div>
@@ -78,17 +101,17 @@
             <div class="link1">mruanova.com</div>
             <p>This website is my career portfolio and it implements the following technologies:</p>
             <ul>
-                <li>HTML5 / CSS3 / JavaScript</li>
-                <li>Bootstrap</li>
-                <li>NodeJS</li>
-                <li>AWS (Amazon Web Services)</li>
+                <li>HTML5 / CSS3 / Bootstrap</li>
+                <li>JavaScript / JQuery</li>
                 <li>Cloud computing</li>
+                <li>AWS (Amazon Web Services)</li>
                 <li>Route 53 / S3 bucket</li>
                 <li>API Gateway Microservices</li>
-                <li>Lambda Functions</li>
+                <li>Lambda serverless functions</li>
+                <li>NodeJS</li>
                 <li>DynamoDB</li>
                 <li>
-                    <a href="https://246gg84zg8.execute-api.us-west-2.amazonaws.com/prod/projects" target="_blank" class="link3" title="Web API">
+                    <a href="https://246gg84zg8.execute-api.us-west-2.amazonaws.com/prod/projects" target="" class="link3" title="Web API">
                         Web API
                     </a>
                 </li>

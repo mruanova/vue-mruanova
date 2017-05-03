@@ -74,7 +74,9 @@ $(document).ready(function () {
                 + "</div>";
             $("#projects").append(project);
             console.log("ADD marker");
-            addMarker(i,response.Items[i].Name,response.Items[i].Website,response.Items[i].Address);
+            if(i<5){
+                addMarker(i,response.Items[i].Name,response.Items[i].Website,response.Items[i].Address);
+            }
         };
     }, "json");
     $(".animation").css("top", "450px");
