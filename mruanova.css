@@ -49,7 +49,6 @@
     position: relative;
     vertical-align: top;
     display: inline-block;
-    /*width: 400px;*/
     height: 533px;
     padding: 0;
 }
@@ -59,13 +58,15 @@ body {
     margin-bottom: 0;
     margin-right: 0;
     margin-left: 0;
+    text-align: center;
 }
 .header {
     width: 100%;
     height: 25px;
+    color: white;
 }
 .h1 {
-    color: darkmagenta;
+    color: darkred;
 }
 .h2 {
     color: darkgoldenrod;
@@ -78,6 +79,11 @@ body {
 }
 .footer {
     color:dimgray;
+}
+.link {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
 }
 .link1 {
     color: darkcyan;
@@ -92,7 +98,7 @@ body {
     font-weight: bold;
 }
 .link3 {
-    color: darkmagenta;
+    color: darkred;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
@@ -150,7 +156,7 @@ body {
     color: white;
     opacity: 0.8;
     padding: 0 5px 0 5px;
-    background-color: darkmagenta;
+    background-color: darkcyan;
     top: 35px;
 }
 .python {
@@ -158,7 +164,7 @@ body {
     color: white;
     opacity: 0.8;
     padding: 0 5px 0 5px;
-    background-color: darkmagenta;
+    background-color: darkcyan;
     top: 60px;
 }
 .mongodb {
@@ -193,13 +199,24 @@ body {
     background-color: darkgoldenrod;
     top: 160px;
 }
+#aws {
+    color: darkred;
+    font-weight: bold;
+}
 .aws {
     position: absolute;
     color: white;
     opacity: 0.8;
     padding: 0 5px 0 5px;
-    background-color: darkcyan;
+    background-color: darkred;
     top: 185px;
+}
+.icon {
+    position: absolute;
+    top: 210px;
+    left: 250px;
+    height: 60px;
+    width: 60px;
 }
 .fullstack {
     position: absolute;
@@ -225,7 +242,7 @@ body {
     font-family: 'Franklin Gothic';
     padding: 5px 5px 5px 5px;
 }
-img {
+.animation img {
     width: 50px;
 }
 #map {
@@ -241,6 +258,7 @@ img {
     height: 55px;
     width: 315px;
     padding: 0 5px 0 5px;
+    text-align: left;
 }
 .company {
     color: darkgoldenrod;
@@ -262,10 +280,10 @@ img {
     border-color: silver;
     border: 1px;
     border-style: solid;
-    /*height: 90px;*/
     width: 90%;
     margin: 5px 0px 5px 5px;
     padding: 5px 0 0 5px;
+    text-align: left;
 }
 .modal {
     display: none; /* Hidden by default */
@@ -285,6 +303,7 @@ img {
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
+    text-align: left;
 }
 .close {
     color: #aaa;
@@ -298,56 +317,6 @@ img {
     text-decoration: none;
     cursor: pointer;
 }
-
-
-html {
-	-ms-touch-action: none;
-}
-
-body,ul,li {
-	padding: 0;
-	margin: 0;
-	border: 0;
-}
-
-body {
-    /*
-	font-size: 12px;
-	font-family: ubuntu, helvetica, arial;
-    */
-	overflow: hidden; /* this is important to prevent the whole page to bounce */
-}
-
-#wrapper {
-	position: absolute;
-	z-index: 1;
-	top: 60px;
-	bottom: 0px;
-	left: 0;
-	width: 100%;
-	height: 470px;
-	overflow: hidden;
-}
-
-#scroller {
-	position: absolute;
-	z-index: 1;
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
-	width: 100%;
-	height: 5000px;
-	-webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	-ms-transform: translateZ(0);
-	-o-transform: translateZ(0);
-	transform: translateZ(0);
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	-webkit-text-size-adjust: none;
-	-moz-text-size-adjust: none;
-	-ms-text-size-adjust: none;
-	-o-text-size-adjust: none;
-	text-size-adjust: none;
+li {
+	list-style-type: square;
 }

@@ -5,55 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="mruanova.css">
-    <script type="text/javascript" src="iscroll.js"></script>
-    <script type="text/javascript" src="demoUtils.js"></script>
-    <script type="text/javascript">
-        var myScroll;
-        function loaded () {
-            myScroll = new IScroll('#wrapper', {
-                scrollbars: true,
-                mouseWheel: true,
-                interactiveScrollbars: true,
-                shrinkScrollbars: 'scale',
-                fadeScrollbars: false
-            });
-        }
-        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, isPassive() ? {
-            capture: false,
-            passive: false
-        } : false);
-</script>
-
+    <link rel="stylesheet" type="text/css" href="mruanova.css">    
 </head>
-<body onload="loaded()">
+<body>
     <div class="header">
-        <nav style="margin-left:5px;">
-            <a target="_blank" class="link1" title="https://www.linkedin.com/in/mruanova" href="https://www.linkedin.com/in/mruanova">
-                linkedin
+            <a target="_blank" class="link" title="https://www.linkedin.com/in/mruanova" href="https://www.linkedin.com/in/mruanova">
+                Linkedin
             </a>
-            <a target="_blank" class="link2" title="https://github.com/mruanova" href="https://github.com/mruanova">
-                github
+            |
+            <a target="_blank" class="link" title="https://github.com/mruanova" href="https://github.com/mruanova">
+                Github
             </a>
-            <a target="_blank" class="link3" title="mruanova@outlook.com" href="mailto:mruanova@outlook.com">
-                email
+            |
+            <a target="_blank" class="link" title="mruanova@outlook.com" href="mailto:mruanova@outlook.com">
+                Email
             </a>  
-            <a target="" class="link4" id="about" href="#">
-                about
+            |
+            <a target="" class="link" id="about" href="#">
+                About
             </a>
-            <a target="_self" class="link5" href="snippets.html">
-                snippets
+            |
+            <a target="_self" class="link" href="snippets.html">
+                Snippets
             </a>
-        </nav>
     </div>
     <div class="main">
         <div class="box col-sm-12 col-md-6 col-lg-4 photo">
-            <div class="animation">
-                <img src="tap.png" alt="scroll up" />
-            </div>
             <div class="mau">mau</div>
             <div class="mauricioruanovahurtado">MAURICIO RUANOVA-HURTADO</div>
-            <div class="skill aspnet">ASP.Net C#</div>
+            <div class="skill aspnet">C# ASP.Net</div>
             <div class="skill mongodb">MongoDB</div>
             <div class="skill expressjs">ExpressJS</div>
             <div class="skill angularjs">AngularJS</div>
@@ -61,20 +41,28 @@
             <div class="skill rubyonrails">Ruby on rails</div>
             <div class="skill python">Python</div>
             <div class="skill aws">AWS</div>
+            <img class="icon" src="aws.png" alt="Amazon Web Services">
             <div class="fullstack">Full Stack</div>
             <div class="softwareengineer">Software Engineer</div>
+            <div class="animation">
+                <img src="tap.png" alt="scroll up" />
+            </div>
         </div>
         <div class="box col-sm-12 col-md-6 col-lg-4">
+            <img src="route53.png" alt="Route 53">
+            <img src="s3.png" alt="S3">
+            <img src="api_gateway.png" alt="API Gateway Microservices">
+            <img src="lambda.png" alt="Lambda Function">
+            <img src="dynamo.png" alt="Dynamo DB">
+            <img src="iam.png" alt="Identity and Access Manager">
             <div class="about">
-                <p>Mauricio Ruanova-Hurtado, full stack software engineer.
+                <p>Mauricio Ruanova-Hurtado full stack software engineer.
                 I develop front end, web services, back end and cloud.
-                This website is my career portfolio hosted in AWS.</p>
-            </div> 
-            <div id="wrapper">
-                <div id="scroller">
-                    <div id="projects"></div>
-                </div>
+                This website is my career portfolio hosted in 
+                <a target="_blank" href="https://www.youtube.com/watch?v=lm2NpZ369Z4" id="aws">AWS</a>.
+                </p>
             </div>
+            <div id="projects"></div>
         </div>
         <div class="box col-sm-12 col-md-12 col-lg-4">
             <div id="map"></div>
@@ -86,7 +74,7 @@
 			<a target="_blank" class="" title="Scholarship paper"
 			   href="https://link.springer.com/chapter/10.1007/11499053_28">
 				papers
-			</a> 
+			</a>
 			<a target="_blank" class="" title="Google books"
 			   href="https://books.google.com/books/about/Estandarizaci%C3%B3n_y_mejora_de_procesos_y.html?id=ipI3HQAACAAJ">
 				books
@@ -94,20 +82,20 @@
         </div>
     </div>
     <div id="myModal" class="modal">
-        <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
-            <div class="link2">Mauricio Ruanova-Hurtado</div>
+            <div class="link2">Mauricio</div>
+            <div class="link2">Ruanova-Hurtado</div>
             <div class="link1">mruanova.com</div>
-            <p>This website is my career portfolio and it implements the following technologies:</p>
+            <p>Career portfolio built with:</p>
             <ul>
                 <li>HTML5 / CSS3 / Bootstrap</li>
                 <li>JavaScript / JQuery</li>
                 <li>Cloud computing</li>
-                <li>AWS (Amazon Web Services)</li>
+                <li>Amazon Web Services</li>
                 <li>Route 53 / S3 bucket</li>
                 <li>API Gateway Microservices</li>
-                <li>Lambda serverless functions</li>
+                <li>Lambda</li>
                 <li>NodeJS</li>
                 <li>DynamoDB</li>
                 <li>
@@ -116,15 +104,6 @@
                     </a>
                 </li>
             </ul>
-            <a href="http://www.linkedin.com/in/mruanova" target="_blank" class="link1" title="http://www.linkedin.com/in/mruanova">
-                linkedin
-            </a>
-            <a href="https://github.com/mruanova" target="_blank" class="link2" title="https://github.com/mruanova">
-                github
-            </a>
-            <a href="mailto:mruanova@outlook.com" target="_blank" class="link3" title="mruanova@outlook.com">
-                email
-            </a>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>

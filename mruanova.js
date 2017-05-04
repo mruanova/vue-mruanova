@@ -18,6 +18,7 @@ window.onclick = function (event) {
 
 var geocoder;
 var map;
+var markers=[];
 function initialize() {
     geocoder = new google.maps.Geocoder();
     var latlng = new google.maps.LatLng(41.8971828, -87.63523709999998);
@@ -36,6 +37,7 @@ function addMarker(index,title,website,address) {
                 position: results[0].geometry.location,
                 title: title
             });
+            markers.push(marker);
             var contentString = '<div id="content">' +
                 '<div class="link2">' + title + '</div>' +
                 '<div id="bodyContent">' +
@@ -47,7 +49,6 @@ function addMarker(index,title,website,address) {
                 content: contentString
             });
             if(index===0) {
-                console.log("OPEN default info window");
                 infowindow.open(map, marker);
             }
             marker.addListener('click', function () {
@@ -58,23 +59,26 @@ function addMarker(index,title,website,address) {
 };
 
 $(document).ready(function () {
-    console.log("GET projects");
-    $.get("https://246gg84zg8.execute-api.us-west-2.amazonaws.com/prod/projects", function (response) {
-        console.log("SORT projects");
+    var api = "https://246gg84zg8.execute-api.us-west-2.amazonaws.com/prod/projects";
+    console.log(api);
+    $.get(api, function (response) {
         response.Items.sort(function (a, b) {
             return parseFloat(a.ProjectId) - parseFloat(b.ProjectId);
         });
-        console.log("APPEND projects");
         for (var i = 0; i < response.Items.length; i++) {
-            var project = "<div id='project"+response.Items[i].ProjectId+"' class='project'>"
-                + "<div class='company'>"+response.Items[i].Name+"</div>"
-                + "<div class='website'>"+response.Items[i].Website+"</div>"
-                + "<div class='position'>"+response.Items[i].Position+"</div>"
-                + "<div class='address'>"+response.Items[i].Address+"</div>"
-                + "</div>";
-            $("#projects").append(project);
-            console.log("ADD marker");
             if(i<5){
+                var project = "<div id='project"+response.Items[i].ProjectId+"' class='project'>"
+                    + "<div class='company'>"+response.Items[i].Name+"</div>"
+                    + "<div class='website'>"+response.Items[i].Website+"</div>"
+                    + "<div class='position'>"+response.Items[i].Position+"</div>"
+                    + "<div class='address'>"+response.Items[i].Address+"</div>"
+                    + "</div>";
+                console.log(response.Items[i].ProjectId);
+                console.log(response.Items[i].Name);
+                console.log(response.Items[i].Website);
+                console.log(response.Items[i].Position);
+                console.log(response.Items[i].Address);
+                $("#projects").append(project);
                 addMarker(i,response.Items[i].Name,response.Items[i].Website,response.Items[i].Address);
             }
         };
@@ -83,17 +87,17 @@ $(document).ready(function () {
 });
 
 $(document).on("click", ".project", function () {
-    console.log("CLICK project");
     var name = $(this)[0].children[0].innerText;
     var website = $(this)[0].children[1].innerText;
     var position = $(this)[0].children[2].innerText;
     var address = $(this)[0].children[3].innerText;
-    console.log("GEOCODE address");
     geocoder.geocode({ 'address': address }, function (results, status) {
         if (status == 'OK') {
-            console.log("CENTER map");
             map.setCenter(results[0].geometry.location);
-            console.log("CREATE marker");
+            for (var i = 0; i < markers.length; i++) {
+                markers[i].setMap(null);
+            }
+            markers.length = 0;
             var marker = new google.maps.Marker({
                 map: map,
                 position: results[0].geometry.location,
@@ -112,7 +116,6 @@ $(document).on("click", ".project", function () {
             marker.addListener('click', function () {
                 infowindow.open(map, marker);
             });
-            console.log("OPEN info window");
             infowindow.open(map, marker);
         }
     });
