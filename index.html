@@ -5,48 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Sarpanch:900" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="mruanova.css">    
 </head>
 <body>
     <div class="header">
-            <a target="_blank" class="link" title="https://www.linkedin.com/in/mruanova" href="https://www.linkedin.com/in/mruanova">
-                Linkedin
-            </a>
-            |
-            <a target="_blank" class="link" title="https://github.com/mruanova" href="https://github.com/mruanova">
-                Github
-            </a>
-            |
-            <a target="_blank" class="link" title="mruanova@outlook.com" href="mailto:mruanova@outlook.com">
-                Email
-            </a>  
-            |
-            <a target="" class="link" id="about" href="#">
-                About
-            </a>
-            |
-            <a target="_self" class="link" href="snippets.html">
-                Snippets
-            </a>
+		<div class="nav">
+			<a target="_blank" class="link" title="https://www.linkedin.com/in/mruanova" href="https://www.linkedin.com/in/mruanova">Linkedin</a>
+		</div>
+		<div class="nav">
+			<a target="_blank" class="link" title="https://github.com/mruanova" href="https://github.com/mruanova">Github</a>
+		</div>
+		<div class="nav">
+			<a target="_blank" class="link" title="mruanova@outlook.com" href="mailto:mruanova@outlook.com">Email</a>  
+		</div>
+		<div class="nav">
+			<a target="" class="link" id="about" href="#">About</a>
+		</div>
     </div>
     <div class="main">
         <div class="box col-sm-12 col-md-6 col-lg-4 photo">
             <div class="mau">mau</div>
             <div class="mauricioruanovahurtado">MAURICIO RUANOVA-HURTADO</div>
-            <div class="skill aspnet">C# ASP.Net</div>
-            <div class="skill mongodb">MongoDB</div>
-            <div class="skill expressjs">ExpressJS</div>
-            <div class="skill angularjs">AngularJS</div>
-            <div class="skill nodejs">NodeJS</div>
-            <div class="skill rubyonrails">Ruby on rails</div>
-            <div class="skill python">Python</div>
-            <div class="skill aws">AWS</div>
+            <div class="skill skill1">Python</div>
+            <div class="skill skill2">UnderscoreJS</div>
+            <div class="skill skill3">BackboneJS</div>
+            <div class="skill skill4">MongoDB</div>
+            <div class="skill skill5">ExpressJS</div>
+            <div class="skill skill6">AngularJS</div>
+            <div class="skill skill7">NodeJS</div>
+            <div class="skill skill8">Ruby on rails</div>
+            <div class="skill skill9">AWS</div>
             <img class="icon" src="aws.png" alt="Amazon Web Services">
             <div class="fullstack">Full Stack</div>
             <div class="softwareengineer">Software Engineer</div>
-            <div class="animation">
+            <!--div class="animation">
                 <img src="tap.png" alt="scroll up" />
-            </div>
+            </div-->
         </div>
         <div class="box col-sm-12 col-md-6 col-lg-4">
             <img src="route53.png" alt="Route 53">
@@ -56,13 +51,14 @@
             <img src="dynamo.png" alt="Dynamo DB">
             <img src="iam.png" alt="Identity and Access Manager">
             <div class="about">
-                <p>Mauricio Ruanova-Hurtado full stack software engineer.
+                <p>Mauricio Ruanova-Hurtado full stack software engineer.&nbsp;
                 I develop front end, web services, back end and cloud.
                 This website is my career portfolio hosted in 
                 <a target="_blank" href="https://www.youtube.com/watch?v=lm2NpZ369Z4" id="aws">AWS</a>.
                 </p>
             </div>
-            <div id="projects"></div>
+            <ul id="project_list"></ul>
+            <!--div id="projects"></div-->
         </div>
         <div class="box col-sm-12 col-md-12 col-lg-4">
             <div id="map"></div>
@@ -70,7 +66,7 @@
     </div>
     <div class="footer">
         <div>
-            © 2017 Mauricio Ruanova-Hurtado  
+			© 2017 Mauricio Ruanova-Hurtado
 			<a target="_blank" class="" title="Scholarship paper"
 			   href="https://link.springer.com/chapter/10.1007/11499053_28">
 				papers
@@ -103,10 +99,15 @@
                         Web API
                     </a>
                 </li>
+				<li>
+					<a target="_blank" href="https://www.youtube.com/watch?v=lm2NpZ369Z4" class="link3">Youtube</a>
+				</li>
             </ul>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="underscore.js"></script>
+    <script src="backbone.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script src="mruanova.js"></script>

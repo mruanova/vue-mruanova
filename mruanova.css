@@ -1,3 +1,6 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 /* Small sized screens */
 @media (max-width: 480px) {
     .col-sm-12 {
@@ -62,8 +65,14 @@ body {
 }
 .header {
     width: 100%;
-    height: 25px;
+    height: 50px;
     color: white;
+}
+.nav
+{
+	width: 75px;
+	display: inline-block;
+    margin-top: 15px;
 }
 .h1 {
     color: darkred;
@@ -77,53 +86,47 @@ body {
 .main {
     width: 100%;
 }
-.footer {
-    color:dimgray;
+/* latin */
+@font-face {
+  font-family: 'Varela';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Varela'), url(https://fonts.gstatic.com/s/varela/v7/G6yziUoU5w8QmZ32N_0XDQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
 .link {
     color: black;
     text-decoration: none;
     font-size: 16px;
+    font-family: 'Varela';
 }
 .link1 {
     color: darkcyan;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
 }
 .link2 {
     color: darkgoldenrod;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
 }
 .link3 {
     color: darkred;
     text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-}
-.link4 {
-    color: dimgray;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-}
-.link5 {
-    color: silver;
-    text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
 }
 .mau {
     position: absolute;
-    top: -10px;
+    top: -25px;
     left: 0px;
     color: white;
     font-weight: bold;
-    font-size: 95px;
+    font-size: 85px;
     text-shadow: 1px 1px #000000;
-    font-family: fantasy;
+    font-family: 'Sarpanch', sans-serif;
     padding: 0 5px 0 5px;
 }
 .mauricioruanovahurtado {
@@ -132,88 +135,64 @@ body {
     left: 10px;
     color: white;
     font-size: 12px;
-    font-family: 'Franklin Gothic';
+    font-family: 'Varela';
     text-shadow: 1px 1px #000000;
 }
 .skill {
     font-weight: bold;
-    font-size: 16px;
-    font-family: 'Franklin Gothic';
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     width: 105px;
     left: 210px;
     text-shadow: 1px 1px #000000;
-}
-.aspnet {
+    text-align: left;
     position: absolute;
     color: white;
-    opacity: 0.7;
+    opacity: 0.8;
     padding: 0 5px 0 5px;
+}
+.skill1 {
+    opacity: 0.7;
     background-color: black;
     top: 10px;
 }
-.rubyonrails {
-    position: absolute;
-    color: white;
-    opacity: 0.8;
-    padding: 0 5px 0 5px;
+.skill2 {
     background-color: darkcyan;
     top: 35px;
 }
-.python {
-    position: absolute;
-    color: white;
-    opacity: 0.8;
-    padding: 0 5px 0 5px;
+.skill3 {
     background-color: darkcyan;
     top: 60px;
 }
-.mongodb {
-    position: absolute;
-    color: white;
-    opacity: 0.8;
-    padding: 0 5px 0 5px;
+.skill4 {
     background-color: darkgoldenrod;
     top: 85px;
 }
-.expressjs {
-    position: absolute;
-    color: white;
-    opacity: 0.8;
-    padding: 0 5px 0 5px;
+.skill5 {
     background-color: darkgoldenrod;
     top: 110px;
 }
-.angularjs {
-    position: absolute;
-    color: white;
-    opacity: 0.8;
-    padding: 0 5px 0 5px;
+.skill6 {
     background-color: darkgoldenrod;
     top: 135px;
 }
-.nodejs {
-    position: absolute;
-    color: white;
-    opacity: 0.8;
-    padding: 0 5px 0 5px;
+.skill7 {
     background-color: darkgoldenrod;
     top: 160px;
 }
-#aws {
-    color: darkred;
-    font-weight: bold;
-}
-.aws {
-    position: absolute;
-    color: white;
-    opacity: 0.8;
-    padding: 0 5px 0 5px;
+.skill8 {
     background-color: darkred;
     top: 185px;
 }
+.skill9 {
+    background-color: darkorange;
+    top: 210px;
+    left: 250px;
+    width: 60px;
+}
 .icon {
     position: absolute;
-    top: 210px;
+    top: 235px;
     left: 250px;
     height: 60px;
     width: 60px;
@@ -226,8 +205,8 @@ body {
     background-color: darkcyan;
     opacity: 0.9;
     font-weight: bold;
-    font-size: 24px;
-    font-family: 'Franklin Gothic';
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 5px 5px 5px 5px;
 }
 .softwareengineer {
@@ -238,8 +217,8 @@ body {
     background-color: black;
     opacity: 0.6;
     font-weight: bold;
-    font-size: 30px;
-    font-family: 'Franklin Gothic';
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 5px 5px 5px 5px;
 }
 .animation img {
@@ -252,13 +231,16 @@ body {
 }
 .footer {
     padding: 0 5px 0 5px;
+    font-size: 0.8em;
+    font-family: 'Varela';
 }
 .about {
-    font-size: 12px;
-    height: 55px;
-    width: 315px;
-    padding: 0 5px 0 5px;
+    font-size: 0.8em;
+    height: 60px;
+    width: 320px;
     text-align: left;
+    padding-top: 10px;
+    font-family: 'Varela';
 }
 .company {
     color: darkgoldenrod;
@@ -275,14 +257,21 @@ body {
 .website {
     color: darkcyan;
 }
+/*
 .project {
-    background-color: white;
-    border-color: silver;
-    border: 1px;
-    border-style: solid;
-    width: 90%;
-    margin: 5px 0px 5px 5px;
-    padding: 5px 0 0 5px;
+    margin-top: 5px;
+    padding-top: 5px;
+    border-top: 1px solid silver;
+    text-align: left;
+}
+*/
+#project_list {
+    margin-left: -40px;
+}
+#project_list > div {
+    margin-top: 5px;
+    padding-top: 5px;
+    border-top: 1px solid silver;
     text-align: left;
 }
 .modal {
