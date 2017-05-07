@@ -103,19 +103,19 @@ body {
 .link1 {
     color: darkcyan;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: bold;
 }
 .link2 {
     color: darkgoldenrod;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: bold;
 }
 .link3 {
     color: darkred;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: bold;
 }
 .mau {
@@ -152,24 +152,23 @@ body {
     padding: 0 5px 0 5px;
 }
 .skill1 {
-    opacity: 0.7;
-    background-color: black;
+    background-color: purple;
     top: 10px;
 }
 .skill2 {
-    background-color: darkcyan;
+    background-color: darkviolet;
     top: 35px;
 }
 .skill3 {
-    background-color: darkcyan;
+    background-color: navy;
     top: 60px;
 }
 .skill4 {
-    background-color: darkgoldenrod;
+    background-color: darkcyan;
     top: 85px;
 }
 .skill5 {
-    background-color: darkgoldenrod;
+    background-color: green;
     top: 110px;
 }
 .skill6 {
@@ -177,15 +176,15 @@ body {
     top: 135px;
 }
 .skill7 {
-    background-color: darkgoldenrod;
+    background-color: orangered;
     top: 160px;
 }
 .skill8 {
-    background-color: darkred;
+    background-color: maroon;
     top: 185px;
 }
 .skill9 {
-    background-color: darkorange;
+    background-color: saddlebrown;
     top: 210px;
     left: 250px;
     width: 60px;
@@ -197,19 +196,21 @@ body {
     height: 60px;
     width: 60px;
 }
-.fullstack {
+.job {
     position: absolute;
-    top: 430px;
-    left: 0px;
     color: white;
     background-color: darkcyan;
-    opacity: 0.9;
-    font-weight: bold;
-    font-size: 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 5px 5px 5px 5px;
+    padding: 12px 5px 5px 5px;
+    border-radius: 100px;
+    border:1px solid white;
+    font-family: 'Varela';
+    font-size: 12px;
+    height: 75px;
+    width: 75px;
+    top: 385px;
+    left: 10px;
 }
-.softwareengineer {
+.portfolio {
     position: absolute;
     top: 475px;
     left: 0px;
@@ -251,20 +252,12 @@ body {
     color: black;
 }
 .address {
-    font-size: 12px;
+    font-size: 11px;
     color: dimgray;
 }
 .website {
     color: darkcyan;
 }
-/*
-.project {
-    margin-top: 5px;
-    padding-top: 5px;
-    border-top: 1px solid silver;
-    text-align: left;
-}
-*/
 #project_list {
     margin-left: -40px;
 }
@@ -308,4 +301,5 @@ body {
 }
 li {
 	list-style-type: square;
+    margin-left: -30px;
 }
