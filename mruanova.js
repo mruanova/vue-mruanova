@@ -1,16 +1,20 @@
+// my API in AWS
 var api = "https://246gg84zg8.execute-api.us-west-2.amazonaws.com/prod/projects";
 var modal = document.getElementById('myModal');
 var btn = document.getElementById("about");
 var span = document.getElementsByClassName("close")[0];
 
+// show modal ABOUT
 btn.onclick = function () {
     modal.style.display = "block";
 };
 
+// hide modal ABOUT on click X
 span.onclick = function () {
     modal.style.display = "none";
 };
 
+// hide modal ABOUT on click anywhere outside the modal
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
@@ -20,6 +24,8 @@ window.onclick = function (event) {
 var geocoder;
 var map;
 var markers=[];
+
+// initialize google maps
 function initialize() {
     geocoder = new google.maps.Geocoder();
     var latlng = new google.maps.LatLng(41.8971828, -87.63523709999998);
@@ -30,6 +36,7 @@ function initialize() {
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
 };
 
+// add a marker in google maps for each project
 function addMarker(index,title,website,address) {
     geocoder.geocode({ 'address': address }, function (results, status) {
         if (status == 'OK') {
@@ -40,7 +47,7 @@ function addMarker(index,title,website,address) {
             });
             markers.push(marker);
             var contentString = '<div id="content">' +
-                '<div class="link2">' + title + '</div>' +
+                '<div class="company">' + title + '</div>' +
                 '<div id="bodyContent">' +
                 '<div class="website">' + website + '</div>' +
                 '<div class="address">'+ address + '</div>' +
@@ -59,10 +66,10 @@ function addMarker(index,title,website,address) {
     });
 };
 
+// display all projects from API using underscore and backbone
 $(document).ready(function () {
-    //console.log(api);
-    //$(".animation").css("top", "450px");
 
+	// create a model for a project using backbone with defaults
     var ProjectModel = Backbone.Model.extend({
         defaults: {
         ProjectId: null,
@@ -73,6 +80,7 @@ $(document).ready(function () {
         }
     });
 
+	// create a collection for a project using backbone from API
     var ProjectCollection = Backbone.Collection.extend({
         model: ProjectModel,
         url: api,
@@ -83,21 +91,25 @@ $(document).ready(function () {
         }
     });
 
-    var template ="<div class='company'><%=Name%></div>";
+	// create a template using underscore
+    var template = "<img src='<%=ProjectId%>.jpg' alt='<%=ProjectId%>' class='logo'>";
+    template +="<div class='company'><%=Name%></div>";
     template+="<div class='website'><%=Website%></div>";
     template+="<div class='position'><%=Position%></div>";
     template+="<div class='address'><%=Address%></div>";
+    template+="<div class='cb'></div>";
 
+	// create a view for a project using backbone and a template from uderscore
     var ProjectView = Backbone.View.extend({
         tagName: "div",
         template: _.template(template),
         initialize: function(){
             this.listenTo(this.collection,"sync",this.render);
-            this.listenTo(this.collection,"remove",this.whatHappened);
             //this.listenTo(this, 'change', this.studentChange);
             //this.listenTo(this, 'add', this.studentAdded);
         },
         render: function(){
+			// render projects and add markers
             var m=this.model.toJSON();
             var t =this.template(m);
             this.$el.html(t);
@@ -110,6 +122,7 @@ $(document).ready(function () {
             return this;
         },
         events:{
+			// on click set center
             'click':'mapGeoCode'
         },
         mapGeoCode: function(){             
@@ -119,6 +132,7 @@ $(document).ready(function () {
             var address = $(this)[0].model.attributes.Address;
             geocoder.geocode({ 'address': address }, function (results, status) {
                 if (status == 'OK') {
+					// set center of the map
                     map.setCenter(results[0].geometry.location);
                     for (var i = 0; i < markers.length; i++) {
                         markers[i].setMap(null);
@@ -144,14 +158,11 @@ $(document).ready(function () {
                     });
                     infowindow.open(map, marker);
                 }
-            });
-            
-        },
-        whatHappened: function(){
-            console.log('what Happened? 1');
+            });   
         }
     });
 
+	// create a list view using backbone
     var ProjectListView = Backbone.View.extend({
         el:"#project_list",
         initialize:function(){
@@ -163,51 +174,14 @@ $(document).ready(function () {
                 var projectView = new ProjectView({model:project});
                 this.$el.append(projectView.render().$el);
             },this);
-        },
-        whatHappened: function(){
-            console.log('what Happened? 2');
         }
     });
 
+	// instantiate
     var projectCollection = new ProjectCollection();
 
+	// fetch
     projectCollection.fetch().then(function(){
         var myProjectList = new ProjectListView({collection:projectCollection});
     });    
-});
-
-$(document).on("click", ".project", function () {
-    /*
-    var name = $(this)[0].children[0].innerText;
-    var website = $(this)[0].children[1].innerText;
-    var position = $(this)[0].children[2].innerText;
-    var address = $(this)[0].children[3].innerText;
-    geocoder.geocode({ 'address': address }, function (results, status) {
-        if (status == 'OK') {
-            map.setCenter(results[0].geometry.location);
-            for (var i = 0; i < markers.length; i++) {
-                markers[i].setMap(null);
-            }
-            markers.length = 0;
-            var marker = new google.maps.Marker({
-                map: map,
-                position: results[0].geometry.location,
-                title: name
-            });
-            var contentString = '<div id="content">' +
-                '<div class="link2">' + name + '</div>' +
-                '<div id="bodyContent">' +
-                '<div class="website">' + website + '</div>' +
-                '<div class="address">'+ address + '</div>' +
-                '</div>' +
-                '</div>';
-            var infowindow = new google.maps.InfoWindow({
-                content: contentString
-            });
-            marker.addListener('click', function () {
-                infowindow.open(map, marker);
-            });
-            infowindow.open(map, marker);
-        }
-    });*/
 });
