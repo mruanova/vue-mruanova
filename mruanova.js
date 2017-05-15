@@ -105,8 +105,6 @@ $(document).ready(function () {
         template: _.template(template),
         initialize: function(){
             this.listenTo(this.collection,"sync",this.render);
-            //this.listenTo(this, 'change', this.studentChange);
-            //this.listenTo(this, 'add', this.studentAdded);
         },
         render: function(){
 			// render projects and add markers
