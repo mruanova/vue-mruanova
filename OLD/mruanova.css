@@ -1,11 +1,22 @@
 *{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
 /* Small sized screens */
 @media (max-width: 480px) {
     .col-sm-12 {
         width: 100%;
+    }
+    .animation {
+        position: absolute;
+        top: 0px;
+        left: 200px;
+        -webkit-transition: top 15s;
+        transition: top 15s;
+        z-index: 1;
+    }
+    .photo {
+        background-image: url('mau.jpg');
+        background-repeat: no-repeat;
     }
 }
 /* Medium sized screens */
@@ -16,21 +27,26 @@
     .col-md-12 {
         width: 100%;
     }
+    .animation {
+        display: none;
+    }
+    .photo {
+        background-image: url('mau.jpg');
+        background-repeat: no-repeat;
+    }
 }
 /* Large sized screens */
 @media only screen and (min-width: 1024px) {
     .col-lg-4 {
         width: 33.333333%;
+    }    
+    .animation {
+        display: none;
     }
-}.flex{
-    display: flex;
-    width: 100%;
-}
-.flex1{
-    flex:1;
-}
-.white{
-    background-color: white;
+    .photo {
+        background-image: url('mau.jpg');
+        background-repeat: no-repeat;
+    }
 }
 .box {
     position: relative;
@@ -46,11 +62,10 @@ body {
     margin-right: 0;
     margin-left: 0;
     text-align: center;
-    background-color: #ccc;
 }
 .header {
     width: 100%;
-    height: 90px;
+    height: 50px;
     color: white;
 }
 .nav
@@ -58,11 +73,6 @@ body {
 	width: 75px;
 	display: inline-block;
     margin-top: 15px;
-}
-.button{
-    height: 40px;
-    width: 40px;
-    border-radius: 100%;
 }
 .h1 {
     color: darkred;
@@ -93,19 +103,31 @@ body {
 .link1 {
     color: darkcyan;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 18px;
     font-weight: bold;
 }
 .link2 {
     color: darkgoldenrod;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 18px;
     font-weight: bold;
 }
 .link3 {
     color: darkred;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.link4 {
+    color: dimgray;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+.link5 {
+    color: silver;
+    text-decoration: none;
+    font-size: 18px;
     font-weight: bold;
 }
 .mau {
@@ -136,71 +158,95 @@ body {
     left: 210px;
     text-shadow: 1px 1px #000000;
     text-align: left;
+}
+.aspnet {
+    position: absolute;
+    color: white;
+    opacity: 0.7;
+    padding: 0 5px 0 5px;
+    background-color: black;
+    top: 10px;
+}
+.rubyonrails {
     position: absolute;
     color: white;
     opacity: 0.8;
     padding: 0 5px 0 5px;
-}
-.skill1 {
-    background-color: purple;
-    top: 10px;
-}
-.skill2 {
-    background-color: darkviolet;
+    background-color: darkcyan;
     top: 35px;
 }
-.skill3 {
-    background-color: navy;
+.python {
+    position: absolute;
+    color: white;
+    opacity: 0.8;
+    padding: 0 5px 0 5px;
+    background-color: darkcyan;
     top: 60px;
 }
-.skill4 {
-    background-color: darkcyan;
+.mongodb {
+    position: absolute;
+    color: white;
+    opacity: 0.8;
+    padding: 0 5px 0 5px;
+    background-color: darkgoldenrod;
     top: 85px;
 }
-.skill5 {
-    background-color: green;
+.expressjs {
+    position: absolute;
+    color: white;
+    opacity: 0.8;
+    padding: 0 5px 0 5px;
+    background-color: darkgoldenrod;
     top: 110px;
 }
-.skill6 {
+.angularjs {
+    position: absolute;
+    color: white;
+    opacity: 0.8;
+    padding: 0 5px 0 5px;
     background-color: darkgoldenrod;
     top: 135px;
 }
-.skill7 {
-    background-color: orangered;
+.nodejs {
+    position: absolute;
+    color: white;
+    opacity: 0.8;
+    padding: 0 5px 0 5px;
+    background-color: darkgoldenrod;
     top: 160px;
 }
-.skill8 {
-    background-color: maroon;
-    top: 185px;
+#aws {
+    color: darkred;
+    font-weight: bold;
 }
-.skill9 {
-    background-color: saddlebrown;
-    top: 210px;
-    left: 250px;
-    width: 60px;
+.aws {
+    position: absolute;
+    color: white;
+    opacity: 0.8;
+    padding: 0 5px 0 5px;
+    background-color: darkred;
+    top: 185px;
 }
 .icon {
     position: absolute;
-    top: 235px;
+    top: 210px;
     left: 250px;
     height: 60px;
     width: 60px;
 }
-.job {
+.fullstack {
     position: absolute;
+    top: 430px;
+    left: 0px;
     color: white;
     background-color: darkcyan;
-    padding: 12px 5px 5px 5px;
-    border-radius: 100px;
-    border:1px solid white;
-    font-family: 'Varela';
-    font-size: 12px;
-    height: 75px;
-    width: 75px;
-    top: 385px;
-    left: 10px;
+    opacity: 0.9;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 5px 5px 5px 5px;
 }
-.portfolio {
+.softwareengineer {
     position: absolute;
     top: 475px;
     left: 0px;
@@ -212,9 +258,13 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 5px 5px 5px 5px;
 }
+.animation img {
+    width: 50px;
+}
 #map {
     height: 100%;
     width: 100%;
+    left:5px;
 }
 .footer {
     padding: 0 5px 0 5px;
@@ -223,40 +273,28 @@ body {
 }
 .about {
     font-size: 0.8em;
+    height: 60px;
     width: 320px;
     text-align: left;
-    padding: 10px 0 0 5px;
+    padding-top: 10px;
     font-family: 'Varela';
-}
-.logo{
- float:left;
- margin-right: 5px;
-}
-.cb{
-    clear:both;
 }
 .company {
     color: darkgoldenrod;
     font-weight:bold;
-    font-size:0.75em;
 }
 .position {
+    font-size: 12px;
     color: black;
-    font-size:0.75em;
 }
 .address {
+    font-size: 12px;
     color: dimgray;
-    font-size:0.75em;
 }
 .website {
     color: darkcyan;
-    font-size:0.75em;
 }
-#project_list {
-    margin-left: -35px;
-    width: 320px;
-}
-#project_list > div {
+.project {
     margin-top: 5px;
     padding-top: 5px;
     border-top: 1px solid silver;
@@ -276,10 +314,10 @@ body {
 }
 .modal-content {
     background-color: #fefefe;
-    margin: 10% auto; /* 15% from the top and centered */
+    margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 260px; /* Could be more or less, depending on screen size */
+    width: 80%; /* Could be more or less, depending on screen size */
     text-align: left;
 }
 .close {
@@ -296,62 +334,4 @@ body {
 }
 li {
 	list-style-type: square;
-    margin-left: -30px;
 }
-/*
-*{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
- 	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-html {
-	touch-action: none;
-	-ms-touch-action: none;
-}
-#wrapper {
-	position: absolute;
-	z-index: 1;
-	top: 110px;
-	bottom: 50px;
-	width: 320px;
-	overflow: hidden;
-}
-#scroller {
-	position: absolute;
-	z-index: 1;
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
-	width: 320px;
-	-webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	-ms-transform: translateZ(0);
-	-o-transform: translateZ(0);
-	transform: translateZ(0);
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	-webkit-text-size-adjust: none;
-	-moz-text-size-adjust: none;
-	-ms-text-size-adjust: none;
-	-o-text-size-adjust: none;
-	font-size-adjust: none;
-}
-#scroller ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	width: 100%;
-	text-align: left;
-}
-#scroller li {
-	padding: 0 10px;
-	height: 40px;
-	line-height: 40px;
-	border-bottom: 1px solid #ccc;
-	border-top: 1px solid #fff;
-	background-color: #fafafa;
-	font-size: 14px;
-}
-*/
