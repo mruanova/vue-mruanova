@@ -191,13 +191,13 @@ body {
     color: white;
     background-color: darkcyan;
     padding: 12px 5px 5px 5px;
-    border-radius: 100px;
+    border-radius: 5px;
     border:1px solid white;
     font-family: 'Varela';
     font-size: 12px;
-    height: 75px;
-    width: 75px;
-    top: 385px;
+    height: 175px;
+    width: 300px;
+    top: 285px;
     left: 10px;
 }
 .portfolio {
