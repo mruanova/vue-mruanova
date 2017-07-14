@@ -92,7 +92,7 @@ $(document).ready(function () {
     });
 
 	// create a template using underscore
-    var template = "<img src='<%=ProjectId%>.jpg' alt='<%=ProjectId%>' class='logo'>";
+    var template = "<img src='img/<%=ProjectId%>.jpg' alt='<%=ProjectId%>' class='logo'>";
     template +="<div class='company'><%=Name%></div>";
     template+="<div class='website'><%=Website%></div>";
     template+="<div class='position'><%=Position%></div>";
