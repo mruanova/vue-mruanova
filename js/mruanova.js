@@ -28,7 +28,7 @@ var markers=[];
 // initialize google maps
 function initialize() {
     geocoder = new google.maps.Geocoder();
-    var latlng = new google.maps.LatLng(41.8971828, -87.63523709999998);
+    var latlng = new google.maps.LatLng(41.8803762, -87.6310045);
     var mapOptions = {
         zoom: 14,
         center: latlng
