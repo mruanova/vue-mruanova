@@ -133,13 +133,3 @@ app.controller('projectsController', function ($scope, projectFactory) {
         }
     });
 });
-/*
-$(document).ready(function () {
-        events:{
-			// on click set center
-            'click':'mapGeoCode'
-        },
-        mapGeoCode: function(){  
-        }
-    });
-});*/
