@@ -229,8 +229,10 @@ body {
     font-family: 'Varela';
 }
 .logo{
- float:left;
- margin-right: 5px;
+    float:left;
+    margin-right: 5px;
+    height: 50px;
+    width: 50px;
 }
 .cb{
     clear:both;
@@ -256,7 +258,8 @@ body {
     margin-left: -35px;
     width: 320px;
 }
-#project_list > div {
+#project_list > li {
+	list-style-type: none;
     margin-top: 5px;
     padding-top: 5px;
     border-top: 1px solid silver;
@@ -294,64 +297,3 @@ body {
     text-decoration: none;
     cursor: pointer;
 }
-li {
-	list-style-type: square;
-    margin-left: -30px;
-}
-/*
-*{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
- 	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-html {
-	touch-action: none;
-	-ms-touch-action: none;
-}
-#wrapper {
-	position: absolute;
-	z-index: 1;
-	top: 110px;
-	bottom: 50px;
-	width: 320px;
-	overflow: hidden;
-}
-#scroller {
-	position: absolute;
-	z-index: 1;
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
-	width: 320px;
-	-webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	-ms-transform: translateZ(0);
-	-o-transform: translateZ(0);
-	transform: translateZ(0);
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	-webkit-text-size-adjust: none;
-	-moz-text-size-adjust: none;
-	-ms-text-size-adjust: none;
-	-o-text-size-adjust: none;
-	font-size-adjust: none;
-}
-#scroller ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	width: 100%;
-	text-align: left;
-}
-#scroller li {
-	padding: 0 10px;
-	height: 40px;
-	line-height: 40px;
-	border-bottom: 1px solid #ccc;
-	border-top: 1px solid #fff;
-	background-color: #fafafa;
-	font-size: 14px;
-}
-*/

@@ -28,7 +28,7 @@ var markers=[];
 // initialize google maps
 function initialize() {
     geocoder = new google.maps.Geocoder();
-    var latlng = new google.maps.LatLng(41.8803762, -87.6310045);
+    var latlng = new google.maps.LatLng(41.8838158, -87.6415424);
     var mapOptions = {
         zoom: 14,
         center: latlng
@@ -94,7 +94,6 @@ $(document).ready(function () {
 	// create a template using underscore
     var template = "<img src='img/<%=ProjectId%>.jpg' alt='<%=ProjectId%>' class='logo'>";
     template +="<div class='company'><%=Name%></div>";
-    template+="<div class='website'><%=Website%></div>";
     template+="<div class='position'><%=Position%></div>";
     template+="<div class='address'><%=Address%></div>";
     template+="<div class='cb'></div>";
