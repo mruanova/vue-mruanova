@@ -262,7 +262,7 @@ body {
 }
 #project_list {
     margin-left: -35px;
-    width: 320px;
+    width: 350px;
 }
 #project_list > li {
 	list-style-type: none;
