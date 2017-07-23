@@ -95,10 +95,11 @@
                             books
                         </a>
                     </div>
-                    <div ng-app='app'>
+                    <div ng-app='app' ng-init="">
                         <div ng-controller='projectsController'>
-                            <ul id="project_list">
-                                <li ng-repeat='project in projects'>
+                            <ul id="project_list" ng-cloak>
+                                <!--ng-cloak: wait for angular to load-->
+                                <li ng-repeat='project in projects track by project.ProjectId'>
                                     <span ng-click="mapGeoCode(project.Name,project.Website,project.Position,project.Address);">
                                     <img ng-src='img/{{project.ProjectId}}.jpg' alt='{{project.ProjectId}}' class='logo'>
                                     <div class='company'>{{project.Name}}</div>

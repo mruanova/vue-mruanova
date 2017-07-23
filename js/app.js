@@ -117,7 +117,7 @@ app.factory("projectFactory", function ($http) {
     };
     return factory;
 });
-app.controller('projectsController', function ($scope, projectFactory) {
+app.controller('projectsController', ['$scope', 'projectFactory', function ($scope, projectFactory) {
     $scope.mapGeoCode = function (name,website,position,address) {
         return mapGeoCode(name,website,position,address);
     };
@@ -132,4 +132,4 @@ app.controller('projectsController', function ($scope, projectFactory) {
             }
         }
     });
-});
+}]);
