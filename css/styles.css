@@ -256,6 +256,11 @@ body {
     color: dimgray;
     font-size:0.75em;
 }
+.address-link {
+    color: blue;
+    font-size:0.75em;
+    text-decoration: underline;
+}
 .website {
     color: darkcyan;
     font-size:0.75em;
