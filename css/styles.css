@@ -146,44 +146,32 @@ body {
     top: 10px;
 }
 .skill2 {
-    background-color: darkviolet;
+    background-color: navy;
     top: 35px;
 }
 .skill3 {
-    background-color: navy;
+    background-color: darkcyan;
     top: 60px;
 }
 .skill4 {
-    background-color: darkcyan;
+    background-color: green;
     top: 85px;
 }
 .skill5 {
-    background-color: green;
+    background-color: darkgoldenrod;
     top: 110px;
 }
 .skill6 {
-    background-color: darkgoldenrod;
+    background-color: orangered;
     top: 135px;
 }
 .skill7 {
-    background-color: orangered;
+    background-color: maroon;
     top: 160px;
 }
 .skill8 {
-    background-color: maroon;
-    top: 185px;
-}
-.skill9 {
-    background-color: saddlebrown;
-    top: 210px;
-    left: 250px;
-    width: 60px;
-}
-.skill0 {
     background-color: black;
-    top: 235px;
-    left: 250px;
-    width: 60px;
+    top: 185px;
 }
 .icon {
     position: absolute;
@@ -195,7 +183,7 @@ body {
 .job {
     position: absolute;
     color: white;
-    background-color: darkcyan;
+    background-color: #2B60DE;
     padding: 12px 5px 5px 5px;
     border-radius: 5px;
     border:1px solid white;
