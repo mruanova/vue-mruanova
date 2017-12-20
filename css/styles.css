@@ -1,5 +1,15 @@
+
+/* latin */
+@font-face {
+    font-family: 'Varela';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Varela'), url(https://fonts.gstatic.com/s/varela/v7/G6yziUoU5w8QmZ32N_0XDQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
 *{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Varela';
 }
 
 /* Small sized screens */
@@ -76,19 +86,10 @@ body {
 .main {
     width: 100%;
 }
-/* latin */
-@font-face {
-  font-family: 'Varela';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Varela'), url(https://fonts.gstatic.com/s/varela/v7/G6yziUoU5w8QmZ32N_0XDQ.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
-}
 .link {
-    color: black;
+    color: #24313f;
     text-decoration: none;
     font-size: 16px;
-    font-family: 'Varela';
 }
 .link1 {
     color: darkcyan;
@@ -125,7 +126,6 @@ body {
     left: 10px;
     color: white;
     font-size: 12px;
-    font-family: 'Varela';
     text-shadow: 1px 1px #000000;
 }
 .skill {
@@ -170,7 +170,7 @@ body {
     top: 160px;
 }
 .skill8 {
-    background-color: black;
+    background-color: #24313f;
     top: 185px;
 }
 .icon {
@@ -182,12 +182,11 @@ body {
 }
 .job {
     position: absolute;
-    color: white;
-    background-color: #2B60DE;
+    color: #24313f;
+    background-color: white;
     padding: 12px 5px 5px 5px;
     border-radius: 5px;
-    border:1px solid white;
-    font-family: 'Varela';
+    border:1px solid #24313f;
     font-size: 12px;
     height: 175px;
     width: 300px;
@@ -199,7 +198,7 @@ body {
     top: 475px;
     left: 0px;
     color: white;
-    background-color: black;
+    background-color: #24313f;
     opacity: 0.6;
     font-weight: bold;
     font-size: 24px;
@@ -213,14 +212,12 @@ body {
 .footer {
     padding: 0 5px 0 5px;
     font-size: 0.8em;
-    font-family: 'Varela';
 }
 .about {
     font-size: 0.8em;
     width: 320px;
     text-align: left;
     padding: 10px 0 0 5px;
-    font-family: 'Varela';
 }
 .logo{
     float:left;
@@ -237,7 +234,7 @@ body {
     font-size:0.75em;
 }
 .position {
-    color: black;
+    color: #24313f;
     font-size:0.75em;
 }
 .address {
@@ -293,7 +290,7 @@ body {
 }
 .close:hover,
 .close:focus {
-    color: black;
+    color: #24313f;
     text-decoration: none;
     cursor: pointer;
 }
