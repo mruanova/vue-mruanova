@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Mauricio Ruanova-Hurtado</title>
+    <title>jquery</title>
     <meta name="description" content="Mauricio Ruanova-Hurtado front-end web developer and software engineer career portfolio">
     <meta name="keywords" content="Mauricio Ruanova-Hurtado,mruanova,mauricio ruanova">
     <meta name="author" content="Mauricio Ruanova-Hurtado">
@@ -89,13 +89,6 @@
                         </a>
                     </div>
                     <ul id="project_list" ng-cloak>
-                        <li v-for="project in projects" onclick="mapGeoCode('{{project.Name}','{{project.Website}}','{{project.Position}}','{{project.Address}}');">
-                            <img src='img/1.jpg' alt='project' class='logo'>
-                            <div class='company'>{{project.Name}}</div>
-                            <div class='position'>{{project.Position}}</div>
-                            <div class='address-link'>{{project.Address}}</div>
-                            <div class="cb"></div>
-                        </li>
                     </ul>
                 </div>
                 <div class="flex1">
@@ -208,7 +201,7 @@
                         console.log(response.Items[i].Website);
                         console.log(response.Items[i].Position);
                         console.log(response.Items[i].Address);
-                        $("#projects").append(project);
+                        $("#project_list").append(project);
                         addMarker(i, response.Items[i].Name, response.Items[i].Website, response.Items[i].Address);
                     }
                 };
