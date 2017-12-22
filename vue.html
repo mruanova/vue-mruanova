@@ -88,11 +88,15 @@
                             books
                         </a>
                     </div>
-                    <div>
-                        <ul id="project_list">
-                            <li>Loading...</li>
-                        </ul>
-                    </div>
+                    <ul id="project_list" ng-cloak>
+                        <li v-for="project in projects" onclick="mapGeoCode('{{project.Name}','{{project.Website}}','{{project.Position}}','{{project.Address}}');">
+                            <img src='img/1.jpg' alt='project' class='logo'>
+                            <div class='company'>{{project.Name}}</div>
+                            <div class='position'>{{project.Position}}</div>
+                            <div class='address-link'>{{project.Address}}</div>
+                            <div class="cb"></div>
+                        </li>
+                    </ul>
                 </div>
                 <div class="flex1">
                 </div>
@@ -228,34 +232,26 @@
             });
         };
     </script>
-    <script src="https://unpkg.com/react@15/dist/react.js"></script>
-    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <script type="text/jsx">
-        class GetProjects extends React.Component {
-            constructor() {
-              super();
-              const url = "https://246gg84zg8.execute-api.us-west-2.amazonaws.com/prod/projects";
-              console.log("url", url);
-              fetch(url).then(response => {return response.json();}).then(data => {
-                let output = '';
-                data.Items.sort(function (a, b) {
-                    return parseFloat(a.ProjectId) - parseFloat(b.ProjectId);
-                }).forEach(function(project){
-                  addMarker(project.ProjectId, project.Name, project.Website, project.Address);
-                  output += `<li onclick="mapGeoCode('${project.Name}','${project.Website}','${project.Position}','${project.Address}');">
-                      <img src='img/${project.ProjectId}.jpg' alt='${project.ProjectId}' class='logo'>
-                  <div class='company'>${project.Name}</div>
-                  <div class='position'>${project.Position}</div>
-                  <div class='address-link'>${project.Address}</div>
-                  <div class="cb"></div></li>`;
-                });
-                document.getElementById('project_list').innerHTML = output;
-              }).catch(err => {console.log("error", err);});
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.1.13/vue-resource.min.js"></script>
+    <script>
+        new Vue({
+            el: '#project_list',
+            data() {
+                return {
+                    projects: []
+                }
+            },
+            created() {
+                const url = 'https://246gg84zg8.execute-api.us-west-2.amazonaws.com/prod/projects';
+                this.$http.get(url).then(data => {
+                    const items = JSON.parse(data.response).Items
+                    items.map(item => {
+                        this.projects.push(item)
+                    })
+                })
             }
-            render() { return null;}
-          }
-          ReactDOM.render(<GetProjects />, document.getElementById("project_list"));
+        })
     </script>
 </body>
 

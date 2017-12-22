@@ -53,15 +53,16 @@
                     <div class="mauricioruanovahurtado">MAURICIO RUANOVA-HURTADO</div>
                     <div class="skill skill1">ASP.Net Core</div>
                     <div class="skill skill2">C# / VB</div>
-                    <div class="skill skill3">React</div>
-                    <div class="skill skill4">Node.js</div>
-                    <div class="skill skill5">Python</div>
-                    <div class="skill skill6">AWS</div>
-                    <div class="skill skill7">Angular</div>
+                    <div class="skill skill3">React JS</div>
+                    <div class="skill skill4">Python</div>
+                    <div class="skill skill5">Mongo DB</div>
+                    <div class="skill skill6">Express JS</div>
+                    <div class="skill skill7">Angular JS</div>
+                    <div class="skill skill8">Node JS</div>
                     <div class="job">
                         <p>
-                            This website in the front-end uses REACT.js to get all the projects from a Web API and renders the response in an list with
-                            markers in Google Maps.
+                            This website requests all projects to a GET HTTP method to a Web API using ANGULAR.js MVC in the front-end and renders the
+                            response in a list with markers in Google Maps.
                         </p>
                         <p>
                             In the back-end a AWS Getway API executes a serverless Lambda function in Node.js that retrieves data from DynamoDB.
@@ -88,10 +89,21 @@
                             books
                         </a>
                     </div>
-                    <div>
-                        <ul id="project_list">
-                            <li>Loading...</li>
-                        </ul>
+                    <div ng-app='app' ng-init="">
+                        <div ng-controller='projectsController'>
+                            <ul id="project_list" ng-cloak>
+                                <!--ng-cloak: wait for angular to load-->
+                                <li ng-repeat='project in projects track by project.ProjectId'>
+                                    <span ng-click="mapGeoCode(project.Name,project.Website,project.Position,project.Address);">
+                                        <img ng-src='img/{{project.ProjectId}}.jpg' alt='{{project.ProjectId}}' class='logo'>
+                                        <div class='company'>{{project.Name}}</div>
+                                        <div class='position'>{{project.Position}}</div>
+                                        <div class='address-link'>{{project.Address}}</div>
+                                        <div class="cb"></div>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="flex1">
@@ -122,11 +134,13 @@
             </p>
         </div>
     </div>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATA9xz6PHfFxFlVLPd4ouYwB3BEQRBgPU&callback=initialize"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
     <script>
-        let modal = document.getElementById('myModal');
-        let btn = document.getElementById("about");
-        let span = document.getElementsByClassName("close")[0];
+        // my API in AWS
+        var api = "https://246gg84zg8.execute-api.us-west-2.amazonaws.com/prod/projects";
+        var modal = document.getElementById('myModal');
+        var btn = document.getElementById("about");
+        var span = document.getElementsByClassName("close")[0];
 
         // show modal ABOUT
         btn.onclick = function () {
@@ -145,16 +159,15 @@
             }
         };
 
-        // google maps global variables
-        let geocoder;
-        let map;
-        let markers = [];
+        var geocoder;
+        var map;
+        var markers = [];
 
         // initialize google maps
         function initialize() {
             geocoder = new google.maps.Geocoder();
-            let latlng = new google.maps.LatLng(41.8838158, -87.6415424);
-            let mapOptions = {
+            var latlng = new google.maps.LatLng(41.8838158, -87.6415424);
+            var mapOptions = {
                 zoom: 14,
                 center: latlng
             };
@@ -169,20 +182,20 @@
             console.log(address);
             geocoder.geocode({ 'address': address }, function (results, status) {
                 if (status == 'OK') {
-                    let marker = new google.maps.Marker({
+                    var marker = new google.maps.Marker({
                         map: map,
                         position: results[0].geometry.location,
                         title: title
                     });
                     markers.push(marker);
-                    let contentString = '<div id="content">' +
+                    var contentString = '<div id="content">' +
                         '<div class="company">' + title + '</div>' +
                         '<div id="bodyContent">' +
                         '<div class="website">' + website + '</div>' +
                         '<div class="address">' + address + '</div>' +
                         '</div>' +
                         '</div>';
-                    let infowindow = new google.maps.InfoWindow({
+                    var infowindow = new google.maps.InfoWindow({
                         content: contentString
                     });
                     if (index === 1) {
@@ -195,29 +208,28 @@
             });
         };
 
-        // google maps on click geo code
         function mapGeoCode(name, website, position, address) {
             geocoder.geocode({ 'address': address }, function (results, status) {
                 if (status == 'OK') {
                     // set center of the map
                     map.setCenter(results[0].geometry.location);
-                    for (let i = 0; i < markers.length; i++) {
+                    for (var i = 0; i < markers.length; i++) {
                         markers[i].setMap(null);
                     }
                     markers.length = 0;
-                    let marker = new google.maps.Marker({
+                    var marker = new google.maps.Marker({
                         map: map,
                         position: results[0].geometry.location,
                         title: name
                     });
-                    let contentString = '<div id="content">' +
+                    var contentString = '<div id="content">' +
                         '<div class="link2">' + name + '</div>' +
                         '<div id="bodyContent">' +
                         '<div class="website">' + website + '</div>' +
                         '<div class="address">' + address + '</div>' +
                         '</div>' +
                         '</div>';
-                    let infowindow = new google.maps.InfoWindow({
+                    var infowindow = new google.maps.InfoWindow({
                         content: contentString
                     });
                     marker.addListener('click', function () {
@@ -227,36 +239,40 @@
                 }
             });
         };
-    </script>
-    <script src="https://unpkg.com/react@15/dist/react.js"></script>
-    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <script type="text/jsx">
-        class GetProjects extends React.Component {
-            constructor() {
-              super();
-              const url = "https://246gg84zg8.execute-api.us-west-2.amazonaws.com/prod/projects";
-              console.log("url", url);
-              fetch(url).then(response => {return response.json();}).then(data => {
-                let output = '';
-                data.Items.sort(function (a, b) {
-                    return parseFloat(a.ProjectId) - parseFloat(b.ProjectId);
-                }).forEach(function(project){
-                  addMarker(project.ProjectId, project.Name, project.Website, project.Address);
-                  output += `<li onclick="mapGeoCode('${project.Name}','${project.Website}','${project.Position}','${project.Address}');">
-                      <img src='img/${project.ProjectId}.jpg' alt='${project.ProjectId}' class='logo'>
-                  <div class='company'>${project.Name}</div>
-                  <div class='position'>${project.Position}</div>
-                  <div class='address-link'>${project.Address}</div>
-                  <div class="cb"></div></li>`;
+
+        // display all projects from API using angular.js
+        var app = angular.module('app', []);
+        app.factory("projectFactory", function ($http) {
+            var factory = {};
+            factory.search = function (callback) {
+                $http.get(api).then(function (response) {
+                    console.log(api);
+                    factory.projects = response.data.Items.sort(function (a, b) {
+                        return parseFloat(a.ProjectId) - parseFloat(b.ProjectId);
+                    });
+                    callback(factory.projects);
                 });
-                document.getElementById('project_list').innerHTML = output;
-              }).catch(err => {console.log("error", err);});
-            }
-            render() { return null;}
-          }
-          ReactDOM.render(<GetProjects />, document.getElementById("project_list"));
+            };
+            return factory;
+        });
+        app.controller('projectsController', ['$scope', 'projectFactory', function ($scope, projectFactory) {
+            $scope.mapGeoCode = function (name, website, position, address) {
+                return mapGeoCode(name, website, position, address);
+            };
+            projectFactory.search(function (projects) {
+                $scope.projects = projects;
+                if ($scope.projects) {
+                    for (var project = 0; project < $scope.projects.length; project++) {
+                        addMarker($scope.projects[project].ProjectId,
+                            $scope.projects[project].Name,
+                            $scope.projects[project].Website,
+                            $scope.projects[project].Address);
+                    }
+                }
+            });
+        }]);
     </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATA9xz6PHfFxFlVLPd4ouYwB3BEQRBgPU&callback=initialize"></script>
 </body>
 
 </html>
