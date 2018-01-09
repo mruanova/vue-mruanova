@@ -143,35 +143,35 @@ body {
 }
 .skill1 {
     background-color: purple;
-    top: 10px;
+    top: 5px;
 }
 .skill2 {
     background-color: navy;
-    top: 35px;
+    top: 25px;
 }
 .skill3 {
     background-color: darkcyan;
-    top: 60px;
+    top: 45px;
 }
 .skill4 {
     background-color: green;
-    top: 85px;
+    top: 65px;
 }
 .skill5 {
     background-color: darkgoldenrod;
-    top: 110px;
+    top: 85px;
 }
 .skill6 {
     background-color: orangered;
-    top: 135px;
+    top: 105px;
 }
 .skill7 {
     background-color: maroon;
-    top: 160px;
+    top: 125px;
 }
 .skill8 {
     background-color: #24313f;
-    top: 185px;
+    top: 145px;
 }
 .icon {
     position: absolute;
