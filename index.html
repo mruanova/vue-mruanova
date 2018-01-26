@@ -2,13 +2,14 @@
 <html>
 
 <head>
-    <title>Mauricio Ruanova-Hurtado</title>
+    <title>jquery</title>
     <meta name="description" content="Mauricio Ruanova-Hurtado front-end web developer and software engineer career portfolio">
     <meta name="keywords" content="Mauricio Ruanova-Hurtado,mruanova,mauricio ruanova">
     <meta name="author" content="Mauricio Ruanova-Hurtado">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
@@ -37,7 +38,7 @@
         </div>
         <div class="nav">
             <a target="_self" class="link" title="about" href="#" id="about">
-                <img src="img/about.jpg" alt="About" class="button"> Demo
+                <img src="img/about.jpg" alt="About" class="button"> About
             </a>
         </div>
     </div>
@@ -59,13 +60,13 @@
                     <div class="skill skill7">Angular</div>
                     <div class="job">
                         <p>
-                            This website in the front-end requests all the projects to a Web API with an Http Get method and renders the response in a list with
+                            This website in the front-end uses JQUERY to get all the projects from a Web API and renders the response in an list with
                             markers in Google Maps.
                         </p>
                         <p>
                             In the back-end a AWS Getway API executes a serverless Lambda function in Node.js that retrieves data from DynamoDB.
                         </p>
-                        <p>Code available in my GitHub account.</p>
+                        <p>Deployment in AWS S3 and Route 53.</p>
                     </div>
                     <div class="portfolio">Career Portfolio</div>
                 </div>
@@ -80,15 +81,15 @@
                 <div class="flex1 white">
                     <div class="about">
                         Mauricio Ruanova-Hurtado ©
-                        <a target="_blank" title="Zillow inspired demo in python django" href="https://youtu.be/qqfZpzWPw9w">Zillow</a> |
-                        <a target="_blank" title="Corcoran Angular" href="https://youtu.be/gPlAq-FR5VE">Corcoran</a> |
-                        <a target="_blank" title="Corcoran TAXI" href="https://youtu.be/VuwrG4q29Js">Taxi</a>
+                        <a target="" class="" title="Scholarship paper" href="https://link.springer.com/chapter/10.1007/11499053_28">
+                            papers
+                        </a> |
+                        <a target="" class="" title="Google books" href="https://books.google.com/books/about/Estandarizaci%C3%B3n_y_mejora_de_procesos_y.html?id=ipI3HQAACAAJ">
+                            books
+                        </a>
                     </div>
-                    <div>
-                        <ul id="project_list">
-                            <li>Loading...</li>
-                        </ul>
-                    </div>
+                    <ul id="project_list">
+                    </ul>
                 </div>
                 <div class="flex1">
                 </div>
@@ -101,97 +102,76 @@
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p>Mauricio Ruanova-Hurtado
+            <p>Mauricio Ruanova-Hurtado front-end web developer, contact me on:
+                <a target="_blank" title="https://www.linkedin.com/in/mruanova" href="https://www.linkedin.com/in/mruanova">Linkedin</a>
             </p>
-            <br/>
-            <p>
-                <a target="_blank" href="https://246gg84zg8.execute-api.us-west-2.amazonaws.com/prod/projects" title="Web API">API</a> |
-                <a target="_blank" title="AWS Lambda function (node.js) and DynamoDB" href="https://youtu.be/NOQZ1OdJ-I4">Back-End</a> mruanova.com 
+            <p>BS in computer systems engineering
+                <a href="http://udem.edu.mx/itc/" target="_blank" title="Universidad de Monterrey">udem.edu.mx</a>
             </p>
-            <p>
-                <a target="_blank" title="Zillow inspired demo in python django" href="https://youtu.be/qqfZpzWPw9w">Zillow</a> inspired app in python
-            </p>
-            <p>
-                <a target="_blank" title="Corcoran Angular" href="https://youtu.be/gPlAq-FR5VE">Corcoran</a> |
-                <a target="_blank" title="Corcoran TAXI" href="https://youtu.be/VuwrG4q29Js">Taxi</a> Angular 5
+            <p>Read my
+                <a href="https://medium.com/@moreissues/">Blog</a> at Medium.</p>
+            <p>Learn more about the technologies used in this website by visiting the following links:
+                <a target="_blank" title="https://github.com/mruanova" href="https://github.com/mruanova/mruanova.com">Github</a>
             </p>
             <p>
-                <a target="_blank" title="Invision Ascendon" href="https://invision-beta.prd1.contentdirect.tv">Invision Ascendon</a> CSG
-            </p>
-            <p>
-                <a target="_blank" title="GO Digital" href="https://youtu.be/39R8jIT7Dio">G/O Digital Marketing</a> shoplocal
-            </p>
-            <p>
-                Games: <a target="_blank" title="pacman" href="http://mruanova.com/pacman/">PACMAN</a>
-            </p>
-            <p>
-                Using <a target="_blank" title="C3JS" href="http://mruanova.com/c3/">C3.js (Timeseries Chart)</a>
+                <a target="_blank" href="https://246gg84zg8.execute-api.us-west-2.amazonaws.com/prod/projects" title="Web API">Web API</a> |
+                <a target="_blank" href="https://youtu.be/rKQUg8x6WXY" title="Youtube tutorial">Youtube tutorial</a>
             </p>
         </div>
     </div>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATA9xz6PHfFxFlVLPd4ouYwB3BEQRBgPU&callback=initialize"></script>
     <script>
-        let modal = document.getElementById('myModal');
-        let btn = document.getElementById("about");
-        let span = document.getElementsByClassName("close")[0];
+        var modal = document.getElementById('myModal');
+        var btn = document.getElementById("about");
+        var span = document.getElementsByClassName("close")[0];
 
-        // show modal ABOUT
         btn.onclick = function () {
             modal.style.display = "block";
         };
 
-        // hide modal ABOUT on click X
         span.onclick = function () {
             modal.style.display = "none";
         };
 
-        // hide modal ABOUT on click anywhere outside the modal
         window.onclick = function (event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
         };
 
-        // google maps global variables
-        let geocoder;
-        let map;
-        let markers = [];
-
-        // initialize google maps
+        var geocoder;
+        var map;
+        var markers = [];
         function initialize() {
             geocoder = new google.maps.Geocoder();
-            let latlng = new google.maps.LatLng(41.8838158, -87.6415424);
-            let mapOptions = {
+            var latlng = new google.maps.LatLng(41.8971828, -87.63523709999998);
+            var mapOptions = {
                 zoom: 14,
                 center: latlng
             };
             map = new google.maps.Map(document.getElementById('map'), mapOptions);
         };
 
-        // add a marker in google maps for each project
         function addMarker(index, title, website, address) {
-            console.log(index);
-            console.log(title);
-            console.log(website);
-            console.log(address);
             geocoder.geocode({ 'address': address }, function (results, status) {
                 if (status == 'OK') {
-                    let marker = new google.maps.Marker({
+                    var marker = new google.maps.Marker({
                         map: map,
                         position: results[0].geometry.location,
                         title: title
                     });
                     markers.push(marker);
-                    let contentString = '<div id="content">' +
-                        '<div class="company">' + title + '</div>' +
+                    var contentString = '<div id="content">' +
+                        '<div class="link2">' + title + '</div>' +
                         '<div id="bodyContent">' +
                         '<div class="website">' + website + '</div>' +
                         '<div class="address">' + address + '</div>' +
                         '</div>' +
                         '</div>';
-                    let infowindow = new google.maps.InfoWindow({
+                    var infowindow = new google.maps.InfoWindow({
                         content: contentString
                     });
-                    if (index === 1) {
+                    if (index === 0) {
                         infowindow.open(map, marker);
                     }
                     marker.addListener('click', function () {
@@ -201,29 +181,59 @@
             });
         };
 
-        // google maps on click geo code
-        function mapGeoCode(name, website, position, address) {
+        $(document).ready(function () {
+            var api = "https://246gg84zg8.execute-api.us-west-2.amazonaws.com/prod/projects";
+            console.log(api);
+            $.get(api, function (response) {
+                response.Items.sort(function (a, b) {
+                    return parseFloat(a.ProjectId) - parseFloat(b.ProjectId);
+                });
+                for (var i = 0; i < response.Items.length; i++) {
+                    if (i < 5) {
+                        var project = "<div id='project" + response.Items[i].ProjectId + "' class='project'>"
+                            + "<div class='company'>" + response.Items[i].Name + "</div>"
+                            + "<div class='website'>" + response.Items[i].Website + "</div>"
+                            + "<div class='position'>" + response.Items[i].Position + "</div>"
+                            + "<div class='address'>" + response.Items[i].Address + "</div>"
+                            + "</div>";
+                        console.log(response.Items[i].ProjectId);
+                        console.log(response.Items[i].Name);
+                        console.log(response.Items[i].Website);
+                        console.log(response.Items[i].Position);
+                        console.log(response.Items[i].Address);
+                        $("#project_list").append(project);
+                        addMarker(i, response.Items[i].Name, response.Items[i].Website, response.Items[i].Address);
+                    }
+                };
+            }, "json");
+            //$(".animation").css("top", "450px");
+        });
+
+        $(document).on("click", ".project", function () {
+            var name = $(this)[0].children[0].innerText;
+            var website = $(this)[0].children[1].innerText;
+            var position = $(this)[0].children[2].innerText;
+            var address = $(this)[0].children[3].innerText;
             geocoder.geocode({ 'address': address }, function (results, status) {
                 if (status == 'OK') {
-                    // set center of the map
                     map.setCenter(results[0].geometry.location);
-                    for (let i = 0; i < markers.length; i++) {
+                    for (var i = 0; i < markers.length; i++) {
                         markers[i].setMap(null);
                     }
                     markers.length = 0;
-                    let marker = new google.maps.Marker({
+                    var marker = new google.maps.Marker({
                         map: map,
                         position: results[0].geometry.location,
                         title: name
                     });
-                    let contentString = '<div id="content">' +
+                    var contentString = '<div id="content">' +
                         '<div class="link2">' + name + '</div>' +
                         '<div id="bodyContent">' +
                         '<div class="website">' + website + '</div>' +
                         '<div class="address">' + address + '</div>' +
                         '</div>' +
                         '</div>';
-                    let infowindow = new google.maps.InfoWindow({
+                    var infowindow = new google.maps.InfoWindow({
                         content: contentString
                     });
                     marker.addListener('click', function () {
@@ -232,38 +242,8 @@
                     infowindow.open(map, marker);
                 }
             });
-        };
+        });
     </script>
-    <script src="https://unpkg.com/react@15/dist/react.js"></script>
-    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <script type="text/jsx">
-        class GetProjects extends React.Component {
-            constructor() {
-              super();
-              const url = "https://246gg84zg8.execute-api.us-west-2.amazonaws.com/prod/projects";
-              console.log("url", url);
-              fetch(url).then(response => {return response.json();}).then(data => {
-                let output = '';
-                data.Items.sort(function (a, b) {
-                    return parseFloat(a.ProjectId) - parseFloat(b.ProjectId);
-                }).forEach(function(project){
-                  addMarker(project.ProjectId, project.Name, project.Website, project.Address);
-                  output += `<li onclick="mapGeoCode('${project.Name}','${project.Website}','${project.Position}','${project.Address}');">
-                      <img src='img/${project.ProjectId}.jpg' alt='${project.ProjectId}' class='logo'>
-                  <div class='company'>${project.Name}</div>
-                  <div class='position'>${project.Position}</div>
-                  <div class='address-link'>${project.Address}</div>
-                  <div class="cb"></div></li>`;
-                });
-                document.getElementById('project_list').innerHTML = output;
-              }).catch(err => {console.log("error", err);});
-            }
-            render() { return null;}
-          }
-          ReactDOM.render(<GetProjects />, document.getElementById("project_list"));
-    </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATA9xz6PHfFxFlVLPd4ouYwB3BEQRBgPU&callback=initialize"></script>
 </body>
 
 </html>
